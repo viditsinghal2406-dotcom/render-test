@@ -10,3 +10,5 @@ numpy==2.4.2
 packaging==26.0
 scipy==1.17.1
 Werkzeug==3.1.6
+psycopg2-binary==2.9.9
+SQLAlchemy==2.0.35
