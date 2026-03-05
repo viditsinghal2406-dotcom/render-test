@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>One Sample t-Test</title>
+</head>
+
+<body>
+
+<h2>One Sample t-Test Calculator</h2>
+
+<form method="post">
+
+<label>Enter sample data (comma separated)</label><br>
+<input type="text" name="data"><br><br>
+
+<label>Population Mean</label><br>
+<input type="number" step="any" name="pop_mean"><br><br>
+
+<label>Alternative Hypothesis</label><br>
+<select name="hypothesis">
+<option value="two-sided">Two-sided</option>
+<option value="less">Less</option>
+<option value="greater">Greater</option>
+</select><br><br>
+
+<label>Alpha</label><br>
+<input type="number" step="0.01" name="alpha" value="0.05"><br><br>
+
+<button type="submit">Run Test</button>
+
+</form>
+
+{% if result %}
+
+<hr>
+
+<h3>Sample Statistics</h3>
+
+<p>Sample Size: {{result.n}}</p>
+<p>Sample Mean: {{result.mean}}</p>
+<p>Sample Std Dev: {{result.std}}</p>
+
+<h3>Test Results</h3>
+
+<p>T Statistic: {{result.t}}</p>
+<p>P Value: {{result.p}}</p>
+
+<h3>{{result.decision}}</h3>
+
+{% endif %}
+
+</body>
+</html>
